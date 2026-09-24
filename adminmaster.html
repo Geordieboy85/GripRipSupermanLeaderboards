@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grip&Rip Admin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <style>
+        :root { --primary: #1e293b; --secondary: #10b981; --bg: #f8fafc; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); padding: 20px; color: var(--primary); }
+        .admin-card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-bottom: 20px; }
+        input, select, button { padding: 10px; border: 1px solid #e2e8f0; border-radius: 6px; width: 100%; box-sizing: border-box; }
+        .btn { cursor: pointer; font-weight: bold; border: none; transition: 0.2s; display: flex; align-items: center; justify-content: center; gap: 8px; }
+        .btn:hover { opacity: 0.9; }
+        .btn-save { background: var(--secondary); color: white; }
+        .btn-import { background: #f59e0b; color: white; }
+        .btn-archive { background: #6366f1; color: white; }
+        .btn-danger { background: #ef4444; color: white; }
+        .btn-move { background: #64748b; color: white; padding: 5px; font-size: 12px; height: 30px; width: 30px; }
+        .btn-sort { background: #334155; color: white; width: auto; padding: 8px 15px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th { text-align: left; font-size: 11px; color: #64748b; padding: 8px; border-bottom: 2px solid #f1f5f9; text-transform: uppercase; }
+        td { padding: 8px; border-bottom: 1px solid #f1f5f9; }
+        .division-header { background: #334155; color: white; padding: 12px; border-radius: 6px; margin-top: 20px; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+        .action-cell { display: flex; gap: 4px; justify-content: center; }
+        #fileInput { display: none; }
+        input:focus { outline: 2px solid var(--secondary); background: #f0fdf4; }
+		/* Promotion Streak Badge */
+		.promo-badge {
+			color: #10b981;
+			margin-left: 6px;
+			font-size: 13px;
+			animation: promoPulse 1.5s infinite ease-in-out;
+			cursor: help;
+		}
+
+		@keyframes promoPulse {
+			0% { transform: scale(1); filter: drop-shadow(0 0 0px rgba(16, 185, 129, 0)); }
+			50% { transform: scale(1.15); filter: drop-shadow(0 0 4px rgba(16, 185, 129, 0.8)); }
+			100% { transform: scale(1); filter: drop-shadow(0 0 0px rgba(16, 185, 129, 0)); }
+		}
+    </style>
+</head>
+<body>
+
+    <h1>Grip&Rip Admin</h1>
+
+    <div class="admin-card">
+        <h3>Current Event</h3>
+        <div class="grid">
+            <div><label>Venue</label><input type="text" id="venueName"></div>
+            <div style="grid-column: span 2;"><label>Event Dates</label><input type="text" id="dateRange" placeholder="Select Date Range.."></div>
+            <div><label>Season</label><input type="number" id="seasonNum"></div>
+            <div><label>Week</label><input type="number" id="weekNum"></div>
+            <div><label>Total Divisions</label><input type="number" id="maxDivisions" min="1" onchange="updateMaxDivisions(this.value)"></div>
+        </div>
+        <div style="display:flex; gap:15px;">
+            <label><input type="checkbox" id="isSig" style="width:auto;"> Major 2x Pts</label>
+            <label><input type="checkbox" id="doubleBonus" style="width:auto;"> Bonus 2x</label>
+        </div>
+    </div>
+
+    <div class="admin-card">
+        <h3>Quick Add Player</h3>
+        <div class="grid">
+            <input type="text" id="newName" placeholder="Name">
+            <select id="newConsole"><option value="PS">PS</option><option value="Xbox">Xbox</option><option value="PC">PC</option></select>
+            <select id="newDiv"></select>
+            <button class="btn btn-save" onclick="addPlayer()"><i class="fa-solid fa-plus"></i> Add</button>
+        </div>
+    </div>
+
+    <div id="division-container"></div>
+
+    <div class="admin-card">
+    <h3>Data Management</h3>
+		<div class="grid">
+			<input type="file" id="fileInput" accept=".json" onchange="importJSON(event)">
+			<button class="btn btn-import" onclick="document.getElementById('fileInput').click()"><i class="fa-solid fa-file-import"></i> 1. Import data.json</button>
+			<button class="btn btn-archive" onclick="publishScores()"><i class="fa-solid fa-upload"></i> 2. Publish Current Week</button>
+			<button class="btn btn-archive" style="background:#8b5cf6;" onclick="processPromotions()"><i class="fa-solid fa-arrows-up-down"></i> 3. Run Promotions & Relegations</button>
+			<button class="btn btn-save" onclick="exportJSON()"><i class="fa-solid fa-download"></i> 4. Download data.json</button>
+			<button class="btn btn-danger" onclick="clearScores()"><i class="fa-solid fa-eraser"></i> 5. Reset Weekly Scores & Next Week</button>
+			<button class="btn btn-danger" style="background:#dc2626;" onclick="resetNewSeason()"><i class="fa-solid fa-rotate-left"></i> 6. Start New Season</button>
+		</div>
+	</div>
+
+    <template id="div-template">
+        <div class="division-header">
+            <span class="header-text">Division X</span>
+            <button class="btn btn-sort" onclick="sortDivision(this)"><i class="fa-solid fa-arrow-down-9-1"></i> Sort Scores</button>
+        </div>
+        <div class="admin-card">
+            <table class="div-table">
+                <thead>
+                    <tr>
+                        <th>Player</th>
+                        <th style="width:80px;">To Par</th>
+                        <th style="width:70px;">Putt</th>
+                        <th style="width:70px;">Shot</th>
+                        <th style="width:70px;">Ace</th>
+                        <th style="width:70px;">Alby</th>
+                        <th style="width:90px;">S. ACC</th>
+                        <th style="width:60px;">PTS</th> <th style="width:120px;">Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </template>
+	
+	<div class="admin-card">
+		<h2><i class="fa-solid fa-ranking-star"></i> Season Standings (Preview)</h2>
+		<div id="admin-standings-preview" class="grid" style="display: flex; flex-direction: column; gap: 20px;">
+		</div>
+	</div>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+<script>
+    let leagueData = JSON.parse(localStorage.getItem('golfAdminData')) || {
+        venue: "", date: "", seasonNum: 1, weekNum: 1, isSig: false, doubleBonus: false,
+        players: [], season: {}, historyHtml: "", lastFinalizedWeek: 0, maxDivisions: 3
+    };
+
+    if (!leagueData.maxDivisions) leagueData.maxDivisions = 3;
+
+    let fp;
+
+    function init() {
+        document.getElementById('venueName').value = leagueData.venue || "";
+        document.getElementById('seasonNum').value = leagueData.seasonNum || 1;
+        document.getElementById('weekNum').value = leagueData.weekNum || 1;
+        document.getElementById('maxDivisions').value = leagueData.maxDivisions || 3;
+        document.getElementById('isSig').checked = leagueData.isSig || false;
+        document.getElementById('doubleBonus').checked = leagueData.doubleBonus || false;
+        
+        fp = flatpickr("#dateRange", {
+            mode: "range",
+            dateFormat: "Y-m-d",
+            defaultDate: leagueData.date ? leagueData.date.split(" to ") : []
+        });
+
+        renderTables();
+        setupNavigation();
+    }
+
+    function updateMaxDivisions(val) {
+        let num = parseInt(val);
+        if (isNaN(num) || num < 1) num = 1;
+        leagueData.maxDivisions = num;
+        localStorage.setItem('golfAdminData', JSON.stringify(leagueData));
+        renderTables();
+    }
+
+    function renderTables() {
+        const container = document.getElementById('division-container');
+        container.innerHTML = '';
+        
+        const currentWeekNum = parseInt(document.getElementById('weekNum').value);
+        const isAlreadyFinalized = (leagueData.lastFinalizedWeek === currentWeekNum);
+
+        // Update Quick Add player division dropdown options
+        const newDivSelect = document.getElementById('newDiv');
+        if (newDivSelect) {
+            let selectHtml = '';
+            for (let i = 1; i <= leagueData.maxDivisions; i++) {
+                selectHtml += `<option value="${i}">Div ${i}</option>`;
+            }
+            selectHtml += `<option value="0">Inactive</option>`;
+            newDivSelect.innerHTML = selectHtml;
+        }
+
+        let divNums = [];
+        for (let i = 1; i <= leagueData.maxDivisions; i++) divNums.push(i);
+        divNums.push(0);
+
+        // Render Weekly Score Input Tables per Division
+        divNums.forEach(divNum => {
+            const temp = document.getElementById('div-template').content.cloneNode(true);
+            temp.querySelector('.header-text').innerText = divNum === 0 ? "Inactive" : "Division " + divNum;
+            temp.querySelector('.btn-sort').setAttribute('data-div', divNum);
+            const tbody = temp.querySelector('tbody');
+            
+            const players = leagueData.players
+                .filter(p => p.division == divNum)
+                .sort((a,b) => parseScore(a.toPar) - parseScore(b.toPar));
+            
+            let lastScore = null, tiedRank = 0;
+            
+            players.forEach((p, idx) => {
+                const currentScore = parseScore(p.toPar);
+                if (currentScore !== lastScore) tiedRank = idx;
+                lastScore = currentScore;
+                
+                const tieCount = players.filter(pl => parseScore(pl.toPar) === currentScore && currentScore !== 999).length;
+                const displayRank = (tieCount > 1 && divNum !== 0) ? "T" + (tiedRank + 1) : (idx + 1);
+                
+                const weeklyPts = (p.toPar !== "" || p.putt !== "") ? calculatePoints(p, tiedRank) : 0;
+                const currentAcc = leagueData.season[p.name]?.acc || "";
+
+                // Promotion indicator badge for weekly view (2+ Win Streak & Div > 1)
+                const streak = leagueData.season[p.name]?.winStreak || 0;
+                const showPromo = (divNum > 1 && streak >= 2);
+                const promoTag = showPromo 
+                    ? `<i class="fa-solid fa-circle-arrow-up promo-badge" title="🔥 ${streak}-Win Streak! Win this week for automatic promotion!"></i>` 
+                    : '';
+
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td><small style="color:#94a3b8">${displayRank}.</small> <strong>${p.name}</strong>${promoTag}</td>
+                    <td><input type="text" value="${p.toPar||''}" onchange="updatePlayerData('${p.name}','toPar',this.value)"></td>
+                    <td><input type="number" value="${p.putt||''}" onchange="updatePlayerData('${p.name}','putt',this.value)"></td>
+                    <td><input type="number" value="${p.shot||''}" onchange="updatePlayerData('${p.name}','shot',this.value)"></td>
+                    <td><input type="text" value="${p.ace||''}" onchange="updatePlayerData('${p.name}','ace',this.value)"></td>
+                    <td><input type="text" value="${p.alby||''}" onchange="updatePlayerData('${p.name}','alby',this.value)"></td>
+                    <td><input type="text" value="${currentAcc}" placeholder="+/-" onchange="updateSeasonAcc('${p.name}', this.value)"></td>
+                    <td style="text-align:center; font-weight:bold; color:#10b981;">${weeklyPts}</td>
+                    <td class="action-cell">
+                        <button class="btn btn-move" title="Promote to Higher Division" onclick="movePlayer('${p.name}',-1)"><i class="fa-solid fa-angle-up"></i></button>
+                        <button class="btn btn-move" title="Demote to Lower Division" onclick="movePlayer('${p.name}',1)"><i class="fa-solid fa-angle-down"></i></button>
+                        <button class="btn btn-danger" style="width:30px; height:30px; padding:0;" onclick="removePlayer('${p.name}')"><i class="fa-solid fa-xmark"></i></button>
+                    </td>`;
+                tbody.appendChild(row);
+            });
+            container.appendChild(temp);
+        });
+
+        // Render Season Standings Preview
+        const standingsArea = document.getElementById('admin-standings-preview');
+        standingsArea.innerHTML = ''; 
+
+        let standingDivs = [];
+        for (let i = 1; i <= leagueData.maxDivisions; i++) standingDivs.push(i);
+
+        standingDivs.forEach(dv => {
+			// Inside renderTables() -> standingDivs.forEach(dv => { ... })
+
+		let playersInDiv = leagueData.players
+			.filter(p => p.division == dv)
+			.map(p => {
+				const currentWeekPlayers = leagueData.players
+					.filter(pl => pl.division == dv)
+					.sort((a, b) => parseScore(a.toPar) - parseScore(b.toPar));
+				
+				const myRank = currentWeekPlayers.findIndex(pl => pl.name === p.name);
+				
+				let myTiedRank = myRank;
+				for(let i = 0; i <= myRank; i++) {
+					if(parseScore(currentWeekPlayers[i].toPar) === parseScore(currentWeekPlayers[myRank].toPar)) {
+						myTiedRank = i;
+						break;
+					}
+				}
+
+				const hasPlayed = (p.toPar !== "" || p.putt !== "");
+				const weeklyPts = (!isAlreadyFinalized && hasPlayed) ? calculatePoints(p, myTiedRank) : 0;
+				const hist = leagueData.season[p.name] || { points: 0, eventsPlayed: 0, wins: 0, acc: "E", winStreak: 0 };
+				
+				// Projected Win Streak calculation:
+				let projectedStreak = hist.winStreak;
+				if (!isAlreadyFinalized) {
+					if (!hasPlayed) {
+						// If they haven't submitted a score for this week yet, project streak as 0
+						projectedStreak = 0;
+					} else if (myTiedRank !== 0) {
+						// Played but not currently 1st place
+						projectedStreak = 0;
+					}
+				}
+
+				return {
+					...p,
+					projectedTotal: hist.points + weeklyPts,
+					projectedEvents: weeklyPts > 0 ? hist.eventsPlayed + 1 : hist.eventsPlayed,
+					weeklyPts: weeklyPts,
+					history: { ...hist, winStreak: projectedStreak },
+					isWinning: (!isAlreadyFinalized && myTiedRank === 0 && hasPlayed)
+				};
+			})
+				.sort((a, b) => {
+					if (b.projectedTotal !== a.projectedTotal) {
+						return b.projectedTotal - a.projectedTotal;
+					}
+					return parseScore(a.history.acc) - parseScore(b.history.acc);
+				});
+
+			if (playersInDiv.length > 0) {
+				let h = `<div style="background:#f1f5f9; padding:15px; border-radius:8px; margin-bottom:10px;">
+							<h3 style="margin-top:0;">Division ${dv} (Ranked by Total Pts & S. ACC)</h3>
+							<table style="width:100%; border-collapse:collapse; background:white;">
+								<tr style="background:#e2e8f0;">
+									<th style="text-align:left; padding:5px;">Player</th>
+									<th style="text-align:center;">P</th>
+									<th style="text-align:center;">W</th>
+									<th style="text-align:center;">S. ACC</th>
+									<th style="text-align:center;">WK PTS</th>
+									<th style="text-align:center;">TOT PTS</th>
+								</tr>`;
+
+				playersInDiv.forEach((p, idx) => {
+					const winDisplay = p.isWinning ? `${p.history.wins} <span style="color:#10b981;">+1</span>` : p.history.wins;
+
+					// Promotion indicator (Div > 1 and Win Streak >= 2)
+					const showPromo = (dv > 1 && p.history.winStreak >= 2);
+					const promoTag = showPromo 
+						? `<i class="fa-solid fa-circle-arrow-up promo-badge" title="🔥 ${p.history.winStreak}-Win Streak! Win this week for automatic promotion!"></i>` 
+						: '';
+
+					h += `<tr style="border-bottom:1px solid #eee;">
+							<td style="padding:5px;"><strong>${p.name}</strong>${promoTag}</td>
+							<td style="text-align:center;">${p.projectedEvents}</td>
+							<td style="text-align:center;">${winDisplay}</td>
+							<td style="text-align:center;">${p.history.acc}</td>
+							<td style="text-align:center; color:#10b981;">+${p.weeklyPts}</td>
+							<td style="text-align:center; font-weight:bold; background:#f8fafc;">${p.projectedTotal}</td>
+						  </tr>`;
+				});
+				h += `</table></div>`;
+				standingsArea.innerHTML += h;
+			}
+		});
+
+        localStorage.setItem('golfAdminData', JSON.stringify(leagueData));
+    }
+
+    function movePlayer(name, dir) {
+        const p = leagueData.players.find(x => x.name === name);
+        if (!p) return;
+
+        let cur = p.division === 0 ? (leagueData.maxDivisions + 1) : p.division;
+        let nxt = Math.max(1, Math.min(leagueData.maxDivisions + 1, cur + dir));
+        let newDiv = nxt === (leagueData.maxDivisions + 1) ? 0 : nxt;
+
+        if (p.division !== 0 && newDiv !== 0 && newDiv < p.division) {
+            let currentPoints = leagueData.season[p.name]?.points || 0;
+            if (currentPoints > 0) {
+                let newPoints = Math.floor(currentPoints / 2);
+                if (confirm(`Promoting ${p.name} to Division ${newDiv}.\n\nPoints penalty rule applies: Current points (${currentPoints}) will be halved to ${newPoints}.\n\nProceed?`)) {
+                    leagueData.season[p.name].points = newPoints;
+                } else {
+                    return;
+                }
+            }
+        }
+
+        p.division = newDiv;
+        localStorage.setItem('golfAdminData', JSON.stringify(leagueData));
+        renderTables();
+    }
+
+    function publishScores() {
+        const vn = document.getElementById('venueName').value;
+        const sn = document.getElementById('seasonNum').value;
+        const wn = parseInt(document.getElementById('weekNum').value);
+        const dr = formatExportDate(document.getElementById('dateRange').value); 
+        
+        if(!vn) return alert("Enter a Venue Name first!");
+        if(leagueData.lastFinalizedWeek === wn) return alert("Week " + wn + " has already been published/finalized.");
+
+        let html = `<div class="history-item"><strong>S${sn} W${wn}: ${vn} (${dr})</strong><table>`;
+        
+        let archiveDivs = [];
+        for (let i = 1; i <= leagueData.maxDivisions; i++) archiveDivs.push(i);
+
+        leagueData.weeklyWinners = {};
+
+        archiveDivs.forEach(dv => {
+            const players = leagueData.players.filter(p => p.division == dv).sort((a,b) => parseScore(a.toPar) - parseScore(b.toPar));
+            if(players.length > 0) {
+                html += `<tr><th colspan="3">Division ${dv}</th></tr>`;
+                let lastScore = null, tiedRank = 0;
+                players.forEach((p, idx) => {
+                    const currentScore = parseScore(p.toPar);
+                    if (currentScore !== lastScore) tiedRank = idx;
+                    lastScore = currentScore;
+                    
+                    leagueData.season[p.name] = leagueData.season[p.name] || {points:0, eventsPlayed:0, wins:0, acc:"E", winStreak:0};
+
+                    // CHECK IF PLAYER SUBMITTED A SCORE THIS WEEK
+                    if(p.toPar !== "" || p.putt !== "") {
+                        const pts = calculatePoints(p, tiedRank);
+                        html += `<tr><td>${p.name}</td><td>${p.toPar}</td><td>${pts}</td></tr>`;
+                        
+                        leagueData.season[p.name].points += pts;
+                        leagueData.season[p.name].eventsPlayed++;
+                        
+                        if(tiedRank === 0) {
+                            leagueData.season[p.name].wins++;
+                            leagueData.season[p.name].winStreak = (leagueData.season[p.name].winStreak || 0) + 1;
+                            leagueData.weeklyWinners[dv] = p.name;
+                        } else {
+                            // Player played but did not win -> reset streak
+                            leagueData.season[p.name].winStreak = 0;
+                        }
+                        
+                        let currentAcc = parseScore(leagueData.season[p.name].acc);
+                        if(currentAcc === 999) currentAcc = 0;
+                        let weeklyScore = parseScore(p.toPar);
+                        if(weeklyScore !== 999) {
+                            let newTotal = currentAcc + weeklyScore;
+                            leagueData.season[p.name].acc = newTotal === 0 ? "E" : (newTotal > 0 ? "+" + newTotal : newTotal);
+                        }
+                    } else {
+                        // PLAYER DID NOT PLAY -> RESET WIN STREAK TO 0
+                        leagueData.season[p.name].winStreak = 0;
+                    }
+                });
+            }
+        });
+        
+        html += `</table></div>`;
+        leagueData.historyHtml = html + (leagueData.historyHtml || "");
+        leagueData.lastFinalizedWeek = wn;
+        leagueData.promotionsProcessedForWeek = 0;
+
+        localStorage.setItem('golfAdminData', JSON.stringify(leagueData));
+        alert(`Week ${wn} Scores Published! Standings and History updated.`);
+        renderTables();
+    }
+
+    function processPromotions() {
+        const wn = parseInt(document.getElementById('weekNum').value);
+        
+        if (leagueData.lastFinalizedWeek !== wn) {
+            return alert("Please click '2. Publish Current Week' before running promotions.");
+        }
+
+        if (leagueData.promotionsProcessedForWeek === wn) {
+            return alert("Promotions for Week " + wn + " have already been executed.");
+        }
+
+        let promotionsLog = [];
+        let justRelegated = new Set();
+        let weeklyWinners = leagueData.weeklyWinners || {};
+
+        for (let dv = leagueData.maxDivisions; dv >= 2; dv--) {
+            let winnerName = weeklyWinners[dv];
+            if (winnerName && leagueData.season[winnerName]?.winStreak >= 3) {
+                let promoter = leagueData.players.find(p => p.name === winnerName);
+                let targetDiv = dv - 1;
+
+                let upperPlayers = leagueData.players
+                    .filter(p => p.division === targetDiv && !justRelegated.has(p.name))
+                    .sort((a, b) => {
+                        let ptsA = leagueData.season[a.name]?.points || 0;
+                        let ptsB = leagueData.season[b.name]?.points || 0;
+
+                        if (ptsA !== ptsB) return ptsA - ptsB;
+
+                        let accA = parseScore(leagueData.season[a.name]?.acc);
+                        let accB = parseScore(leagueData.season[b.name]?.acc);
+
+                        return accB - accA;
+                    });
+
+                if (promoter && upperPlayers.length > 0) {
+                    let relegatedPlayer = upperPlayers[0];
+
+                    let oldPts = leagueData.season[promoter.name].points;
+                    let newPts = Math.floor(oldPts / 2);
+                    leagueData.season[promoter.name].points = newPts;
+                    
+                    leagueData.season[promoter.name].winStreak = 0;
+                    leagueData.season[promoter.name].wins = 0;
+
+                    promoter.division = targetDiv;
+                    relegatedPlayer.division = dv;
+
+                    justRelegated.add(relegatedPlayer.name);
+
+                    promotionsLog.push(
+                        `🏆 ${promoter.name} won 3 in a row in Div ${dv}!\n` +
+                        `• Promoted to Div ${targetDiv} (Points: ${oldPts} ➔ ${newPts}, Wins reset to 0)\n` +
+                        `• ${relegatedPlayer.name} relegated from Div ${targetDiv} to Div ${dv}`
+                    );
+                }
+            }
+        }
+
+        leagueData.promotionsProcessedForWeek = wn;
+        localStorage.setItem('golfAdminData', JSON.stringify(leagueData));
+
+        if (promotionsLog.length > 0) {
+            alert("--- PROMOTIONS & RELEGATIONS EXECUTED ---\n\n" + promotionsLog.join("\n\n"));
+        } else {
+            alert("No 3-in-a-row streaks found this week. Divisions remain unchanged.");
+        }
+        
+        renderTables();
+    }
+
+    function sortDivision(btn) {
+        const dv = parseInt(btn.getAttribute('data-div'));
+        leagueData.players.sort((a,b) => {
+            if(a.division !== b.division) return 0;
+            return a.division === dv ? parseScore(a.toPar) - parseScore(b.toPar) : 0;
+        });
+        localStorage.setItem('golfAdminData', JSON.stringify(leagueData));
+        renderTables();
+    }
+
+    function updatePlayerData(name, field, value) {
+        const p = leagueData.players.find(x => x.name === name);
+        if (!p) return;
+
+        let val = value.trim().toUpperCase();
+
+        if (field === 'toPar' && val !== "") {
+            let num = parseInt(val.replace("+", ""));
+            if (!isNaN(num)) {
+                if (num > 0) val = "+" + num;
+                else if (num === 0) val = "E";
+                else val = num.toString();
+            } else if (val !== 'E') {
+                val = ""; 
+            }
+        }
+
+        p[field] = val;
+        localStorage.setItem('golfAdminData', JSON.stringify(leagueData));
+        renderTables();
+    }
+
+    function updateSeasonAcc(name, val) {
+        if (!leagueData.season[name]) leagueData.season[name] = {points:0, eventsPlayed:0, wins:0, acc:""};
+        leagueData.season[name].acc = val;
+        localStorage.setItem('golfAdminData', JSON.stringify(leagueData));
+    }
+
+    function parseScore(v) { 
+        if (!v || v === "") return 999;
+        let s = v.toString().trim().toUpperCase();
+        if (s === 'E' || s === '0') return 0;
+        return parseInt(s.replace("+","")) || 0;
+    }
+    
+    function calculatePoints(p, rank) {
+        let base = 100 - (rank * 10);
+        if (base < 10) base = 10;
+        
+        let bM = document.getElementById('doubleBonus').checked ? 2 : 1;
+        let bonus = 0;
+        
+        if(parseInt(p.putt) > 0) bonus += (25 * bM); 
+        if(parseInt(p.shot) > 0) bonus += (25 * bM);
+        if(p.ace && p.ace.trim() !== "") bonus += (50 * bM); 
+        if(p.alby && p.alby.trim() !== "") bonus += (50 * bM);
+        
+        let total = base + bonus;
+        return document.getElementById('isSig').checked ? total * 2 : total;
+    }
+
+    function formatExportDate(dateStr) {
+        if (!dateStr || !dateStr.includes(" to ")) return dateStr;
+        const parts = dateStr.split(" to ");
+        const d1 = new Date(parts[0]);
+        const d2 = new Date(parts[1]);
+        const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        return `${d1.getDate()} ${months[d1.getMonth()]} - ${d2.getDate()} ${months[d2.getMonth()]} ${d2.getFullYear()}`;
+    }
+
+    function addPlayer() {
+        const n = document.getElementById('newName').value.trim();
+        if(!n) return;
+        leagueData.players.push({name:n, console:document.getElementById('newConsole').value, division:parseInt(document.getElementById('newDiv').value), toPar:"", putt:"", shot:"", ace:"", alby:""});
+        document.getElementById('newName').value = "";
+        renderTables();
+    }
+
+    function removePlayer(n) { if(confirm("Delete "+n+"?")) { leagueData.players=leagueData.players.filter(p=>p.name!==n); renderTables(); } }
+    
+    function exportJSON() {
+        leagueData.venue = document.getElementById('venueName').value;
+        leagueData.date = document.getElementById('dateRange').value; 
+        leagueData.seasonNum = parseInt(document.getElementById('seasonNum').value);
+        leagueData.weekNum = parseInt(document.getElementById('weekNum').value);
+        leagueData.maxDivisions = parseInt(document.getElementById('maxDivisions').value) || 3;
+        leagueData.isSig = document.getElementById('isSig').checked;
+        leagueData.doubleBonus = document.getElementById('doubleBonus').checked;
+
+        const blob = new Blob([JSON.stringify(leagueData, null, 2)], {type: "application/json"});
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = `S${leagueData.seasonNum}W${leagueData.weekNum}_data.json`;
+        a.click();
+    }
+
+    function importJSON(e) {
+        const file = e.target.files[0];
+        if(!file) return;
+        const reader = new FileReader();
+        reader.onload = (ev) => {
+            try {
+                leagueData = JSON.parse(ev.target.result);
+                if (!leagueData.maxDivisions) leagueData.maxDivisions = 3;
+                localStorage.setItem('golfAdminData', JSON.stringify(leagueData));
+                init(); 
+                alert("Data imported!");
+            } catch (err) { alert("Invalid JSON"); }
+        };
+        reader.readAsText(file);
+    }
+
+    function clearScores() {
+        const currentWeek = parseInt(document.getElementById('weekNum').value) || 1;
+        const nextWeek = currentWeek + 1;
+
+        if (confirm(`Wipe weekly scores and advance to Week ${nextWeek}?`)) {
+            leagueData.players.forEach(p => { 
+                p.toPar = ""; 
+                p.putt = ""; 
+                p.shot = ""; 
+                p.ace = ""; 
+                p.alby = ""; 
+            });
+
+            leagueData.weekNum = nextWeek;
+            document.getElementById('weekNum').value = nextWeek;
+
+            localStorage.setItem('golfAdminData', JSON.stringify(leagueData));
+            renderTables();
+        }
+    }
+
+    function clearSeasonStandings() { 
+        if(confirm("Wipe everything?")) { 
+            leagueData.season={}; leagueData.historyHtml=""; leagueData.lastFinalizedWeek=0; leagueData.maxDivisions=3;
+            localStorage.setItem('golfAdminData', JSON.stringify(leagueData)); 
+            location.reload(); 
+        } 
+    }
+    
+    function resetNewSeason() {
+        const currentSeason = parseInt(document.getElementById('seasonNum').value) || 1;
+        const nextSeason = currentSeason + 1;
+
+        const confirmation = confirm(
+            `⚠️ START NEW SEASON?\n\n` +
+            `This action will:\n` +
+            `• Increment Season to Season ${nextSeason}\n` +
+            `• Reset Week counter to Week 1\n` +
+            `• Wipe all total Points, Wins, Streaks & Accumulated Scores\n` +
+            `• Clear weekly score inputs and archive history\n` +
+            `• Preserve player names, consoles, and current division assignments\n\n` +
+            `Do you want to proceed?`
+        );
+
+        if (confirmation) {
+            leagueData.seasonNum = nextSeason;
+            leagueData.weekNum = 1;
+            leagueData.lastFinalizedWeek = 0;
+            leagueData.promotionsProcessedForWeek = 0;
+            leagueData.historyHtml = "";
+            leagueData.weeklyWinners = {};
+
+            document.getElementById('seasonNum').value = nextSeason;
+            document.getElementById('weekNum').value = 1;
+
+            leagueData.players.forEach(p => {
+                p.toPar = "";
+                p.putt = "";
+                p.shot = "";
+                p.ace = "";
+                p.alby = "";
+            });
+
+            leagueData.season = {};
+            leagueData.players.forEach(p => {
+                leagueData.season[p.name] = {
+                    points: 0,
+                    eventsPlayed: 0,
+                    wins: 0,
+                    acc: "E",
+                    winStreak: 0
+                };
+            });
+
+            localStorage.setItem('golfAdminData', JSON.stringify(leagueData));
+            renderTables();
+
+            alert(`🏆 Season ${nextSeason} initialized! All standings and histories have been reset.`);
+        }
+    }
+
+    function setupNavigation() {
+        document.getElementById('division-container').addEventListener('keydown', function(e) {
+            const active = document.activeElement;
+            if (active.tagName !== 'INPUT') return;
+
+            const cell = active.closest('td');
+            const row = active.closest('tr');
+            const colIdx = cell.cellIndex;
+
+            if (e.key === "ArrowUp") {
+                e.preventDefault();
+                const prevRow = row.previousElementSibling;
+                if (prevRow) prevRow.cells[colIdx].querySelector('input')?.focus();
+            } 
+            else if (e.key === "ArrowDown" || e.key === "Enter") {
+                e.preventDefault();
+                const nextRow = row.nextElementSibling;
+                if (nextRow) {
+                    nextRow.cells[colIdx].querySelector('input')?.focus();
+                } else {
+                    const nextDiv = row.closest('.admin-card').parentElement.nextElementSibling;
+                    const nextInput = nextDiv?.querySelector('tbody tr td:nth-child(' + (colIdx + 1) + ') input');
+                    if (nextInput) nextInput.focus();
+                }
+            }
+            else if (e.key === "ArrowLeft" && active.selectionStart === 0) {
+                const prevInput = cell.previousElementSibling?.querySelector('input');
+                if (prevInput) prevInput.focus();
+            }
+            else if (e.key === "ArrowRight" && active.selectionStart === active.value.length) {
+                const nextInput = cell.nextElementSibling?.querySelector('input');
+                if (nextInput) nextInput.focus();
+            }
+        });
+    }
+
+    window.onload = init;
+</script>
+</body>
+</html>
