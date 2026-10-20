@@ -179,7 +179,7 @@
     {
       "name": "MADROK87",
       "console": "PS",
-      "division": 3,
+      "division": 4,
       "toPar": "",
       "putt": "",
       "shot": "",
@@ -249,7 +249,7 @@
     {
       "name": "Colly45x",
       "console": "Xbox",
-      "division": 4,
+      "division": 3,
       "toPar": "-23",
       "putt": "35",
       "shot": "16.9",
@@ -485,11 +485,11 @@
       "winStreak": 0
     },
     "Colly45x": {
-      "points": 615,
+      "points": 307,
       "eventsPlayed": 5,
-      "wins": 4,
+      "wins": 0,
       "acc": -90,
-      "winStreak": 3
+      "winStreak": 0
     },
     "Matwilney": {
       "points": 405,
@@ -522,6 +522,6 @@
     "3": "X3offtheTee",
     "4": "Colly45x"
   },
-  "promotionsProcessedForWeek": 0,
+  "promotionsProcessedForWeek": 9,
   "weekInProgress": false
 }
