@@ -1,8 +1,8 @@
 {
-  "venue": "Wheelbarrow Club",
-  "date": "2026-10-22 to 2026-10-28",
+  "venue": "Royal Portrush",
+  "date": "2026-10-29 to 2026-11-04",
   "seasonNum": 8,
-  "weekNum": 11,
+  "weekNum": 12,
   "isSig": false,
   "doubleBonus": false,
   "players": [
@@ -20,7 +20,7 @@
       "name": "fransslabak",
       "console": "PS",
       "division": 1,
-      "toPar": "-9",
+      "toPar": "-10",
       "putt": "",
       "shot": "",
       "ace": "",
@@ -30,8 +30,8 @@
       "name": "Geordieboy85",
       "console": "PS",
       "division": 1,
-      "toPar": "-14",
-      "putt": "38.7",
+      "toPar": "E",
+      "putt": "",
       "shot": "",
       "ace": "",
       "alby": ""
@@ -40,9 +40,9 @@
       "name": "Mr Longpole",
       "console": "Xbox",
       "division": 1,
-      "toPar": "-10",
-      "putt": "",
-      "shot": "5.9",
+      "toPar": "-13",
+      "putt": "29",
+      "shot": "",
       "ace": "",
       "alby": ""
     },
@@ -70,9 +70,9 @@
       "name": "infamousEddieC",
       "console": "PS",
       "division": 2,
-      "toPar": "-8",
+      "toPar": "-4",
       "putt": "",
-      "shot": "11",
+      "shot": "",
       "ace": "",
       "alby": ""
     },
@@ -80,8 +80,8 @@
       "name": "Keep_of_Kalessin",
       "console": "PS",
       "division": 2,
-      "toPar": "-16",
-      "putt": "",
+      "toPar": "-10",
+      "putt": "55.8",
       "shot": "",
       "ace": "",
       "alby": ""
@@ -90,9 +90,9 @@
       "name": "ArfaBubble",
       "console": "PS",
       "division": 2,
-      "toPar": "-20",
+      "toPar": "-4",
       "putt": "",
-      "shot": "",
+      "shot": "10.7",
       "ace": "",
       "alby": ""
     },
@@ -100,8 +100,8 @@
       "name": "Hoplinkz",
       "console": "PS",
       "division": 2,
-      "toPar": "-2",
-      "putt": "25.1",
+      "toPar": "",
+      "putt": "",
       "shot": "",
       "ace": "",
       "alby": ""
@@ -110,7 +110,7 @@
       "name": "alegiuvadoita",
       "console": "PC",
       "division": 2,
-      "toPar": "-10",
+      "toPar": "-3",
       "putt": "",
       "shot": "",
       "ace": "",
@@ -120,7 +120,7 @@
       "name": "guillaume_moreau",
       "console": "PC",
       "division": 2,
-      "toPar": "",
+      "toPar": "-5",
       "putt": "",
       "shot": "",
       "ace": "",
@@ -130,7 +130,7 @@
       "name": "RSHxElites",
       "console": "Xbox",
       "division": 3,
-      "toPar": "-4",
+      "toPar": "-3",
       "putt": "",
       "shot": "",
       "ace": "",
@@ -140,7 +140,7 @@
       "name": "X3offtheTee",
       "console": "Xbox",
       "division": 3,
-      "toPar": "-13",
+      "toPar": "-2",
       "putt": "",
       "shot": "",
       "ace": "",
@@ -150,9 +150,9 @@
       "name": "Noworries37908",
       "console": "Xbox",
       "division": 3,
-      "toPar": "-9",
+      "toPar": "+2",
       "putt": "",
-      "shot": "",
+      "shot": "11.2",
       "ace": "",
       "alby": ""
     },
@@ -160,7 +160,7 @@
       "name": "PillowPutter",
       "console": "Xbox",
       "division": 3,
-      "toPar": "-10",
+      "toPar": "+7",
       "putt": "",
       "shot": "",
       "ace": "",
@@ -170,7 +170,7 @@
       "name": "er114ic",
       "console": "PS",
       "division": 3,
-      "toPar": "-3",
+      "toPar": "",
       "putt": "",
       "shot": "",
       "ace": "",
@@ -180,7 +180,7 @@
       "name": "horusphoenix",
       "console": "Xbox",
       "division": 4,
-      "toPar": "-22",
+      "toPar": "",
       "putt": "",
       "shot": "",
       "ace": "",
@@ -230,9 +230,9 @@
       "name": "Colly45x",
       "console": "Xbox",
       "division": 3,
-      "toPar": "-26",
-      "putt": "31.1",
-      "shot": "9",
+      "toPar": "-11",
+      "putt": "38.3",
+      "shot": "",
       "ace": "",
       "alby": ""
     },
@@ -240,9 +240,9 @@
       "name": "Matwilney",
       "console": "Xbox",
       "division": 4,
-      "toPar": "+5",
+      "toPar": "",
       "putt": "",
-      "shot": "6.4",
+      "shot": "",
       "ace": "",
       "alby": ""
     },
@@ -260,8 +260,8 @@
       "name": "teasauce",
       "console": "Xbox",
       "division": 4,
-      "toPar": "+8",
-      "putt": "16.4",
+      "toPar": "",
+      "putt": "",
       "shot": "",
       "ace": "",
       "alby": ""
@@ -276,25 +276,25 @@
       "winStreak": 0
     },
     "fransslabak": {
-      "points": 1215,
-      "eventsPlayed": 11,
+      "points": 1305,
+      "eventsPlayed": 12,
       "wins": 4,
-      "acc": -144,
+      "acc": -154,
       "winStreak": 0
     },
     "Geordieboy85": {
-      "points": 1065,
-      "eventsPlayed": 11,
+      "points": 1145,
+      "eventsPlayed": 12,
       "wins": 5,
       "acc": -137,
-      "winStreak": 1
+      "winStreak": 0
     },
     "Mr Longpole": {
-      "points": 805,
-      "eventsPlayed": 9,
-      "wins": 0,
-      "acc": -80,
-      "winStreak": 0
+      "points": 930,
+      "eventsPlayed": 10,
+      "wins": 1,
+      "acc": -93,
+      "winStreak": 1
     },
     "lanzarlaluna": {
       "points": 510,
@@ -311,25 +311,25 @@
       "winStreak": 0
     },
     "infamousEddieC": {
-      "points": 770,
-      "eventsPlayed": 9,
+      "points": 850,
+      "eventsPlayed": 10,
       "wins": 1,
-      "acc": -50,
+      "acc": -54,
       "winStreak": 0
     },
     "Keep_of_Kalessin": {
-      "points": 1095,
-      "eventsPlayed": 11,
-      "wins": 5,
-      "acc": -138,
-      "winStreak": 0
+      "points": 1220,
+      "eventsPlayed": 12,
+      "wins": 6,
+      "acc": -148,
+      "winStreak": 1
     },
     "ArfaBubble": {
-      "points": 970,
-      "eventsPlayed": 10,
+      "points": 1075,
+      "eventsPlayed": 11,
       "wins": 4,
-      "acc": -107,
-      "winStreak": 1
+      "acc": -111,
+      "winStreak": 0
     },
     "Hoplinkz": {
       "points": 775,
@@ -339,45 +339,45 @@
       "winStreak": 0
     },
     "alegiuvadoita": {
-      "points": 645,
-      "eventsPlayed": 9,
+      "points": 705,
+      "eventsPlayed": 10,
       "wins": 0,
-      "acc": -25,
+      "acc": -28,
       "winStreak": 0
     },
     "guillaume_moreau": {
-      "points": 965,
-      "eventsPlayed": 10,
+      "points": 1055,
+      "eventsPlayed": 11,
       "wins": 1,
-      "acc": -58,
+      "acc": -63,
       "winStreak": 0
     },
     "RSHxElites": {
-      "points": 1005,
-      "eventsPlayed": 11,
+      "points": 1095,
+      "eventsPlayed": 12,
       "wins": 2,
-      "acc": -1,
+      "acc": -4,
       "winStreak": 0
     },
     "X3offtheTee": {
-      "points": 1100,
-      "eventsPlayed": 11,
+      "points": 1180,
+      "eventsPlayed": 12,
       "wins": 4,
-      "acc": -33,
+      "acc": -35,
       "winStreak": 0
     },
     "Noworries37908": {
-      "points": 900,
-      "eventsPlayed": 11,
+      "points": 995,
+      "eventsPlayed": 12,
       "wins": 1,
-      "acc": "+40",
+      "acc": "+42",
       "winStreak": 0
     },
     "PillowPutter": {
-      "points": 1115,
-      "eventsPlayed": 11,
+      "points": 1175,
+      "eventsPlayed": 12,
       "wins": 2,
-      "acc": "+14",
+      "acc": "+21",
       "winStreak": 0
     },
     "er114ic": {
@@ -406,7 +406,7 @@
       "eventsPlayed": 10,
       "wins": 5,
       "acc": -141,
-      "winStreak": 2
+      "winStreak": 0
     },
     "leowalkerr8": {
       "points": 80,
@@ -465,11 +465,11 @@
       "winStreak": 0
     },
     "Colly45x": {
-      "points": 557,
-      "eventsPlayed": 7,
-      "wins": 2,
-      "acc": -126,
-      "winStreak": 2
+      "points": 682,
+      "eventsPlayed": 8,
+      "wins": 3,
+      "acc": -137,
+      "winStreak": 3
     },
     "Matwilney": {
       "points": 520,
@@ -500,14 +500,13 @@
       "winStreak": 0
     }
   },
-  "historyHtml": "<div class=\"history-item\"><strong>S8 W11: Wheelbarrow Club (22 Oct - 28 Oct 2026)</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>Geordieboy85</td><td>-14</td><td>125</td></tr><tr><td>Mr Longpole</td><td>-10</td><td>115</td></tr><tr><td>fransslabak</td><td>-9</td><td>80</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>ArfaBubble</td><td>-20</td><td>100</td></tr><tr><td>Keep_of_Kalessin</td><td>-16</td><td>90</td></tr><tr><td>alegiuvadoita</td><td>-10</td><td>80</td></tr><tr><td>infamousEddieC</td><td>-8</td><td>95</td></tr><tr><td>Hoplinkz</td><td>-2</td><td>85</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>Colly45x</td><td>-26</td><td>150</td></tr><tr><td>X3offtheTee</td><td>-13</td><td>90</td></tr><tr><td>PillowPutter</td><td>-10</td><td>80</td></tr><tr><td>Noworries37908</td><td>-9</td><td>70</td></tr><tr><td>RSHxElites</td><td>-4</td><td>60</td></tr><tr><td>er114ic</td><td>-3</td><td>50</td></tr><tr><th colspan=\"3\">Division 4</th></tr><tr><td>horusphoenix</td><td>-22</td><td>100</td></tr><tr><td>Matwilney</td><td>+5</td><td>115</td></tr><tr><td>teasauce</td><td>+8</td><td>105</td></tr></table></div><div class=\"history-item\"><strong>S8 W10: Fruitland Manor (Major) (15 Oct - 21 Oct 2026)</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>fransslabak</td><td>-20</td><td>200</td></tr><tr><td>lanzarlaluna</td><td>-8</td><td>90</td></tr><tr><td>Geordieboy85</td><td>-5</td><td>80</td></tr><tr><td>GbWaCkErGuY</td><td>-4</td><td>70</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>Keep_of_Kalessin</td><td>-14</td><td>100</td></tr><tr><td>infamousEddieC</td><td>-10</td><td>90</td></tr><tr><td>guillaume_moreau</td><td>-3</td><td>130</td></tr><tr><td>ArfaBubble</td><td>-1</td><td>70</td></tr><tr><td>Hoplinkz</td><td>+3</td><td>110</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>Colly45x</td><td>-10</td><td>100</td></tr><tr><td>X3offtheTee</td><td>+9</td><td>90</td></tr><tr><td>PillowPutter</td><td>+10</td><td>130</td></tr><tr><td>Noworries37908</td><td>+12</td><td>120</td></tr><tr><td>RSHxElites</td><td>+13</td><td>60</td></tr><tr><th colspan=\"3\">Division 4</th></tr><tr><td>horusphoenix</td><td>+1</td><td>200</td></tr></table></div><div class=\"history-item\"><strong>S8 W9: Phal du Luses (8 Oct - 14 Oct 2026)</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>fransslabak</td><td>-20</td><td>125</td></tr><tr><td>lanzarlaluna</td><td>-19</td><td>115</td></tr><tr><td>Geordieboy85</td><td>-12</td><td>80</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>Keep_of_Kalessin</td><td>-21</td><td>100</td></tr><tr><td>ArfaBubble</td><td>-19</td><td>90</td></tr><tr><td>guillaume_moreau</td><td>-19</td><td>115</td></tr><tr><td>alegiuvadoita</td><td>-5</td><td>95</td></tr><tr><td>infamousEddieC</td><td>E</td><td>60</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>X3offtheTee</td><td>-15</td><td>100</td></tr><tr><td>RSHxElites</td><td>-5</td><td>115</td></tr><tr><td>er114ic</td><td>-5</td><td>90</td></tr><tr><td>Noworries37908</td><td>-4</td><td>70</td></tr><tr><td>PillowPutter</td><td>+1</td><td>135</td></tr><tr><th colspan=\"3\">Division 4</th></tr><tr><td>Colly45x</td><td>-23</td><td>150</td></tr><tr><td>horusphoenix</td><td>-21</td><td>90</td></tr><tr><td>RichNick69</td><td>-8</td><td>80</td></tr><tr><td>Matwilney</td><td>-1</td><td>70</td></tr></table></div><div class=\"history-item\"><strong>S8 W8: Carnside Moss (1 Oct - 7 Oct 2026)</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>lanzarlaluna</td><td>-20</td><td>100</td></tr><tr><td>Geordieboy85</td><td>-17</td><td>90</td></tr><tr><td>Mr Longpole</td><td>-13</td><td>105</td></tr><tr><td>fransslabak</td><td>-4</td><td>95</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>ArfaBubble</td><td>-15</td><td>175</td></tr><tr><td>alegiuvadoita</td><td>-14</td><td>90</td></tr><tr><td>Keep_of_Kalessin</td><td>-12</td><td>80</td></tr><tr><td>guillaume_moreau</td><td>-12</td><td>80</td></tr><tr><td>infamousEddieC</td><td>-8</td><td>85</td></tr><tr><td>Hoplinkz</td><td>+2</td><td>50</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>RSHxElites</td><td>-14</td><td>100</td></tr><tr><td>X3offtheTee</td><td>-6</td><td>90</td></tr><tr><td>er114ic</td><td>-3</td><td>105</td></tr><tr><td>Noworries37908</td><td>-2</td><td>95</td></tr><tr><td>PillowPutter</td><td>+5</td><td>60</td></tr><tr><th colspan=\"3\">Division 4</th></tr><tr><td>Colly45x</td><td>-20</td><td>125</td></tr><tr><td>horusphoenix</td><td>-13</td><td>90</td></tr></table></div><div class=\"history-item\"><strong>S8 W7: Seminole GC (24 Sep - 30 Sep 2026)</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>Geordieboy85</td><td>-14</td><td>100</td></tr><tr><td>Mr Longpole</td><td>-13</td><td>90</td></tr><tr><td>fransslabak</td><td>-11</td><td>130</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>ArfaBubble</td><td>-20</td><td>100</td></tr><tr><td>Keep_of_Kalessin</td><td>-14</td><td>115</td></tr><tr><td>guillaume_moreau</td><td>-14</td><td>90</td></tr><tr><td>infamousEddieC</td><td>-13</td><td>95</td></tr><tr><td>Hoplinkz</td><td>-13</td><td>70</td></tr><tr><td>alegiuvadoita</td><td>E</td><td>50</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>PillowPutter</td><td>-5</td><td>100</td></tr><tr><td>RSHxElites</td><td>-4</td><td>90</td></tr><tr><td>X3offtheTee</td><td>-3</td><td>105</td></tr><tr><td>Noworries37908</td><td>+5</td><td>95</td></tr><tr><td>er114ic</td><td>+6</td><td>60</td></tr><tr><th colspan=\"3\">Division 4</th></tr><tr><td>Colly45x</td><td>-21</td><td>100</td></tr><tr><td>horusphoenix</td><td>-17</td><td>90</td></tr><tr><td>XxTML67xX</td><td>-11</td><td>105</td></tr><tr><td>Matwilney</td><td>-7</td><td>95</td></tr></table></div><div class=\"history-item\"><strong>S8 W6: Cottonwood (17 Sep - 23 Sep 2026)</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>Geordieboy85</td><td>-14</td><td>100</td></tr><tr><td>GbWaCkErGuY</td><td>-14</td><td>100</td></tr><tr><td>Mr Longpole</td><td>-13</td><td>80</td></tr><tr><td>fransslabak</td><td>-10</td><td>120</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>guillaume_moreau</td><td>-6</td><td>150</td></tr><tr><td>ArfaBubble</td><td>-3</td><td>90</td></tr><tr><td>Keep_of_Kalessin</td><td>-1</td><td>80</td></tr><tr><td>alegiuvadoita</td><td>+1</td><td>70</td></tr><tr><td>infamousEddieC</td><td>+7</td><td>60</td></tr><tr><td>Hoplinkz</td><td>+8</td><td>50</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>X3offtheTee</td><td>-5</td><td>125</td></tr><tr><td>er114ic</td><td>-1</td><td>90</td></tr><tr><td>RSHxElites</td><td>+4</td><td>80</td></tr><tr><td>Noworries37908</td><td>+4</td><td>80</td></tr><tr><td>PillowPutter</td><td>+4</td><td>105</td></tr><tr><th colspan=\"3\">Division 4</th></tr><tr><td>horusphoenix</td><td>-14</td><td>125</td></tr><tr><td>M.Bel_Trame</td><td>-9</td><td>115</td></tr><tr><td>Matwilney</td><td>+2</td><td>80</td></tr></table></div><div class=\"history-item\"><strong>S8 W5: The Silver Strand (10 Sep - 16 Sep 2026)</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>fransslabak</td><td>-13</td><td>100</td></tr><tr><td>Geordieboy85</td><td>-13</td><td>100</td></tr><tr><td>WingIsBack</td><td>-11</td><td>80</td></tr><tr><td>Mr Longpole</td><td>-9</td><td>120</td></tr><tr><td>lanzarlaluna</td><td>-5</td><td>110</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>Keep_of_Kalessin</td><td>-7</td><td>100</td></tr><tr><td>ArfaBubble</td><td>-5</td><td>90</td></tr><tr><td>guillaume_moreau</td><td>E</td><td>130</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>PillowPutter</td><td>-10</td><td>100</td></tr><tr><td>X3offtheTee</td><td>-3</td><td>90</td></tr><tr><td>er114ic</td><td>E</td><td>130</td></tr><tr><td>RSHxElites</td><td>+8</td><td>120</td></tr><tr><td>Noworries37908</td><td>+11</td><td>60</td></tr><tr><th colspan=\"3\">Division 4</th></tr><tr><td>Colly45x</td><td>-12</td><td>150</td></tr><tr><td>Hendomedes</td><td>-11</td><td>90</td></tr><tr><td>horusphoenix</td><td>-7</td><td>80</td></tr><tr><td>XxTML67xX</td><td>-7</td><td>80</td></tr><tr><td>Polekatt</td><td>+5</td><td>60</td></tr><tr><td>Matwilney</td><td>+7</td><td>50</td></tr><tr><td>kcarlin069</td><td>+12</td><td>40</td></tr></table></div><div class=\"history-item\"><strong>S8 W4: Ballyhoo Golf Club (3 Sep - 9 Sep 2026)</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>Geordieboy85</td><td>-18</td><td>100</td></tr><tr><td>fransslabak</td><td>-9</td><td>90</td></tr><tr><td>Mr Longpole</td><td>-5</td><td>105</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>ArfaBubble</td><td>-12</td><td>125</td></tr><tr><td>Keep_of_Kalessin</td><td>-6</td><td>90</td></tr><tr><td>guillaume_moreau</td><td>+1</td><td>80</td></tr><tr><td>Hoplinkz</td><td>+4</td><td>95</td></tr><tr><td>alegiuvadoita</td><td>+8</td><td>60</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>Noworries37908</td><td>+5</td><td>100</td></tr><tr><td>RSHxElites</td><td>+6</td><td>90</td></tr><tr><td>PillowPutter</td><td>+6</td><td>90</td></tr><tr><td>X3offtheTee</td><td>+8</td><td>95</td></tr><tr><td>er114ic</td><td>+8</td><td>95</td></tr><tr><th colspan=\"3\">Division 4</th></tr><tr><td>XxTML67xX</td><td>-15</td><td>100</td></tr><tr><td>Hendomedes</td><td>-14</td><td>90</td></tr><tr><td>Colly45x</td><td>-14</td><td>90</td></tr><tr><td>NightTrainD</td><td>-5</td><td>70</td></tr><tr><td>Matwilney</td><td>+8</td><td>110</td></tr><tr><td>Polekatt</td><td>+13</td><td>50</td></tr><tr><td>kcarlin069</td><td>+28</td><td>40</td></tr></table></div><div class=\"history-item\"><strong>S8 W3: Black Rye Ridge MC (27 Aug - 2 Sep 2026)</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>WingIsBack</td><td>-13</td><td>125</td></tr><tr><td>GbWaCkErGuY</td><td>-13</td><td>100</td></tr><tr><td>Geordieboy85</td><td>-10</td><td>80</td></tr><tr><td>lanzarlaluna</td><td>-9</td><td>95</td></tr><tr><td>fransslabak</td><td>-8</td><td>60</td></tr><tr><td>Mr Longpole</td><td>-5</td><td>50</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>Keep_of_Kalessin</td><td>-15</td><td>125</td></tr><tr><td>Hoplinkz</td><td>E</td><td>115</td></tr><tr><td>alegiuvadoita</td><td>+5</td><td>80</td></tr><tr><td>infamousEddieC</td><td>+6</td><td>70</td></tr><tr><td>guillaume_moreau</td><td>+6</td><td>70</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>X3offtheTee</td><td>E</td><td>100</td></tr><tr><td>PillowPutter</td><td>+3</td><td>115</td></tr><tr><td>er114ic</td><td>+4</td><td>80</td></tr><tr><td>RSHxElites</td><td>+5</td><td>95</td></tr><tr><td>Noworries37908</td><td>+5</td><td>70</td></tr><tr><th colspan=\"3\">Division 4</th></tr><tr><td>horusphoenix</td><td>-16</td><td>100</td></tr><tr><td>XxTML67xX</td><td>-15</td><td>115</td></tr><tr><td>NightTrainD</td><td>-12</td><td>105</td></tr><tr><td>Polekatt</td><td>+13</td><td>70</td></tr><tr><td>kcarlin069</td><td>+19</td><td>60</td></tr></table></div><div class=\"history-item\"><strong>S8 W2: Shio Tori (20 Aug - 26 Aug 2026)</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>fransslabak</td><td>-29</td><td>125</td></tr><tr><td>WingIsBack</td><td>-20</td><td>90</td></tr><tr><td>Geordieboy85</td><td>-13</td><td>105</td></tr><tr><td>Mr Longpole</td><td>-8</td><td>70</td></tr><tr><td>GbWaCkErGuY</td><td>+104</td><td>60</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>Keep_of_Kalessin</td><td>-20</td><td>125</td></tr><tr><td>infamousEddieC</td><td>-11</td><td>115</td></tr><tr><td>Hoplinkz</td><td>-8</td><td>80</td></tr><tr><td>guillaume_moreau</td><td>-7</td><td>70</td></tr><tr><td>alegiuvadoita</td><td>-5</td><td>60</td></tr><tr><td>ArfaBubble</td><td>-2</td><td>50</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>X3offtheTee</td><td>-7</td><td>125</td></tr><tr><td>er114ic</td><td>-5</td><td>90</td></tr><tr><td>PillowPutter</td><td>-4</td><td>105</td></tr><tr><td>RSHxElites</td><td>-3</td><td>70</td></tr><tr><td>Noworries37908</td><td>+5</td><td>60</td></tr><tr><th colspan=\"3\">Division 4</th></tr><tr><td>horusphoenix</td><td>-17</td><td>100</td></tr><tr><td>NightTrainD</td><td>-9</td><td>90</td></tr><tr><td>XxTML67xX</td><td>-8</td><td>80</td></tr><tr><td>Polekatt</td><td>-3</td><td>120</td></tr><tr><td>kcarlin069</td><td>+16</td><td>60</td></tr></table></div><div class=\"history-item\"><strong>S8 W1: Baskerville Moors (13 Aug - 19 Aug 2026)</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>WingIsBack</td><td>-13</td><td>125</td></tr><tr><td>fransslabak</td><td>-11</td><td>90</td></tr><tr><td>Geordieboy85</td><td>-7</td><td>105</td></tr><tr><td>Mr Longpole</td><td>-4</td><td>70</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>infamousEddieC</td><td>-13</td><td>100</td></tr><tr><td>Keep_of_Kalessin</td><td>-12</td><td>90</td></tr><tr><td>ArfaBubble</td><td>-10</td><td>80</td></tr><tr><td>Hoplinkz</td><td>-6</td><td>120</td></tr><tr><td>alegiuvadoita</td><td>-5</td><td>60</td></tr><tr><td>guillaume_moreau</td><td>-4</td><td>50</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>RSHxElites</td><td>-7</td><td>125</td></tr><tr><td>X3offtheTee</td><td>+2</td><td>90</td></tr><tr><td>Noworries37908</td><td>+8</td><td>80</td></tr><tr><td>PillowPutter</td><td>+14</td><td>95</td></tr><tr><td>er114ic</td><td>+15</td><td>60</td></tr><tr><td>MADROK87</td><td>+44</td><td>50</td></tr><tr><th colspan=\"3\">Division 4</th></tr><tr><td>Wo Be Killin</td><td>-23</td><td>100</td></tr><tr><td>horusphoenix</td><td>-15</td><td>90</td></tr><tr><td>leowalkerr8</td><td>-10</td><td>80</td></tr><tr><td>XxTML67xX</td><td>-8</td><td>145</td></tr><tr><td>FLEWFLANDER</td><td>+11</td><td>60</td></tr><tr><td>Polekatt</td><td>+23</td><td>75</td></tr><tr><td>kcarlin069</td><td>+37</td><td>40</td></tr></table></div>",
-  "lastFinalizedWeek": 11,
+  "historyHtml": "<div class=\"history-item\"><strong>S8 W12: Royal Portrush (29 Oct - 4 Nov 2026)</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>Mr Longpole</td><td>-13</td><td>125</td></tr><tr><td>fransslabak</td><td>-10</td><td>90</td></tr><tr><td>Geordieboy85</td><td>E</td><td>80</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>Keep_of_Kalessin</td><td>-10</td><td>125</td></tr><tr><td>guillaume_moreau</td><td>-5</td><td>90</td></tr><tr><td>infamousEddieC</td><td>-4</td><td>80</td></tr><tr><td>ArfaBubble</td><td>-4</td><td>105</td></tr><tr><td>alegiuvadoita</td><td>-3</td><td>60</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>Colly45x</td><td>-11</td><td>125</td></tr><tr><td>RSHxElites</td><td>-3</td><td>90</td></tr><tr><td>X3offtheTee</td><td>-2</td><td>80</td></tr><tr><td>Noworries37908</td><td>+2</td><td>95</td></tr><tr><td>PillowPutter</td><td>+7</td><td>60</td></tr><tr><th colspan=\"3\">Division 4</th></tr></table></div><div class=\"history-item\"><strong>S8 W11: Wheelbarrow Club (22 Oct - 28 Oct 2026)</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>Geordieboy85</td><td>-14</td><td>125</td></tr><tr><td>Mr Longpole</td><td>-10</td><td>115</td></tr><tr><td>fransslabak</td><td>-9</td><td>80</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>ArfaBubble</td><td>-20</td><td>100</td></tr><tr><td>Keep_of_Kalessin</td><td>-16</td><td>90</td></tr><tr><td>alegiuvadoita</td><td>-10</td><td>80</td></tr><tr><td>infamousEddieC</td><td>-8</td><td>95</td></tr><tr><td>Hoplinkz</td><td>-2</td><td>85</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>Colly45x</td><td>-26</td><td>150</td></tr><tr><td>X3offtheTee</td><td>-13</td><td>90</td></tr><tr><td>PillowPutter</td><td>-10</td><td>80</td></tr><tr><td>Noworries37908</td><td>-9</td><td>70</td></tr><tr><td>RSHxElites</td><td>-4</td><td>60</td></tr><tr><td>er114ic</td><td>-3</td><td>50</td></tr><tr><th colspan=\"3\">Division 4</th></tr><tr><td>horusphoenix</td><td>-22</td><td>100</td></tr><tr><td>Matwilney</td><td>+5</td><td>115</td></tr><tr><td>teasauce</td><td>+8</td><td>105</td></tr></table></div><div class=\"history-item\"><strong>S8 W10: Fruitland Manor (Major) (15 Oct - 21 Oct 2026)</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>fransslabak</td><td>-20</td><td>200</td></tr><tr><td>lanzarlaluna</td><td>-8</td><td>90</td></tr><tr><td>Geordieboy85</td><td>-5</td><td>80</td></tr><tr><td>GbWaCkErGuY</td><td>-4</td><td>70</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>Keep_of_Kalessin</td><td>-14</td><td>100</td></tr><tr><td>infamousEddieC</td><td>-10</td><td>90</td></tr><tr><td>guillaume_moreau</td><td>-3</td><td>130</td></tr><tr><td>ArfaBubble</td><td>-1</td><td>70</td></tr><tr><td>Hoplinkz</td><td>+3</td><td>110</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>Colly45x</td><td>-10</td><td>100</td></tr><tr><td>X3offtheTee</td><td>+9</td><td>90</td></tr><tr><td>PillowPutter</td><td>+10</td><td>130</td></tr><tr><td>Noworries37908</td><td>+12</td><td>120</td></tr><tr><td>RSHxElites</td><td>+13</td><td>60</td></tr><tr><th colspan=\"3\">Division 4</th></tr><tr><td>horusphoenix</td><td>+1</td><td>200</td></tr></table></div><div class=\"history-item\"><strong>S8 W9: Phal du Luses (8 Oct - 14 Oct 2026)</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>fransslabak</td><td>-20</td><td>125</td></tr><tr><td>lanzarlaluna</td><td>-19</td><td>115</td></tr><tr><td>Geordieboy85</td><td>-12</td><td>80</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>Keep_of_Kalessin</td><td>-21</td><td>100</td></tr><tr><td>ArfaBubble</td><td>-19</td><td>90</td></tr><tr><td>guillaume_moreau</td><td>-19</td><td>115</td></tr><tr><td>alegiuvadoita</td><td>-5</td><td>95</td></tr><tr><td>infamousEddieC</td><td>E</td><td>60</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>X3offtheTee</td><td>-15</td><td>100</td></tr><tr><td>RSHxElites</td><td>-5</td><td>115</td></tr><tr><td>er114ic</td><td>-5</td><td>90</td></tr><tr><td>Noworries37908</td><td>-4</td><td>70</td></tr><tr><td>PillowPutter</td><td>+1</td><td>135</td></tr><tr><th colspan=\"3\">Division 4</th></tr><tr><td>Colly45x</td><td>-23</td><td>150</td></tr><tr><td>horusphoenix</td><td>-21</td><td>90</td></tr><tr><td>RichNick69</td><td>-8</td><td>80</td></tr><tr><td>Matwilney</td><td>-1</td><td>70</td></tr></table></div><div class=\"history-item\"><strong>S8 W8: Carnside Moss (1 Oct - 7 Oct 2026)</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>lanzarlaluna</td><td>-20</td><td>100</td></tr><tr><td>Geordieboy85</td><td>-17</td><td>90</td></tr><tr><td>Mr Longpole</td><td>-13</td><td>105</td></tr><tr><td>fransslabak</td><td>-4</td><td>95</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>ArfaBubble</td><td>-15</td><td>175</td></tr><tr><td>alegiuvadoita</td><td>-14</td><td>90</td></tr><tr><td>Keep_of_Kalessin</td><td>-12</td><td>80</td></tr><tr><td>guillaume_moreau</td><td>-12</td><td>80</td></tr><tr><td>infamousEddieC</td><td>-8</td><td>85</td></tr><tr><td>Hoplinkz</td><td>+2</td><td>50</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>RSHxElites</td><td>-14</td><td>100</td></tr><tr><td>X3offtheTee</td><td>-6</td><td>90</td></tr><tr><td>er114ic</td><td>-3</td><td>105</td></tr><tr><td>Noworries37908</td><td>-2</td><td>95</td></tr><tr><td>PillowPutter</td><td>+5</td><td>60</td></tr><tr><th colspan=\"3\">Division 4</th></tr><tr><td>Colly45x</td><td>-20</td><td>125</td></tr><tr><td>horusphoenix</td><td>-13</td><td>90</td></tr></table></div><div class=\"history-item\"><strong>S8 W7: Seminole GC (24 Sep - 30 Sep 2026)</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>Geordieboy85</td><td>-14</td><td>100</td></tr><tr><td>Mr Longpole</td><td>-13</td><td>90</td></tr><tr><td>fransslabak</td><td>-11</td><td>130</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>ArfaBubble</td><td>-20</td><td>100</td></tr><tr><td>Keep_of_Kalessin</td><td>-14</td><td>115</td></tr><tr><td>guillaume_moreau</td><td>-14</td><td>90</td></tr><tr><td>infamousEddieC</td><td>-13</td><td>95</td></tr><tr><td>Hoplinkz</td><td>-13</td><td>70</td></tr><tr><td>alegiuvadoita</td><td>E</td><td>50</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>PillowPutter</td><td>-5</td><td>100</td></tr><tr><td>RSHxElites</td><td>-4</td><td>90</td></tr><tr><td>X3offtheTee</td><td>-3</td><td>105</td></tr><tr><td>Noworries37908</td><td>+5</td><td>95</td></tr><tr><td>er114ic</td><td>+6</td><td>60</td></tr><tr><th colspan=\"3\">Division 4</th></tr><tr><td>Colly45x</td><td>-21</td><td>100</td></tr><tr><td>horusphoenix</td><td>-17</td><td>90</td></tr><tr><td>XxTML67xX</td><td>-11</td><td>105</td></tr><tr><td>Matwilney</td><td>-7</td><td>95</td></tr></table></div><div class=\"history-item\"><strong>S8 W6: Cottonwood (17 Sep - 23 Sep 2026)</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>Geordieboy85</td><td>-14</td><td>100</td></tr><tr><td>GbWaCkErGuY</td><td>-14</td><td>100</td></tr><tr><td>Mr Longpole</td><td>-13</td><td>80</td></tr><tr><td>fransslabak</td><td>-10</td><td>120</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>guillaume_moreau</td><td>-6</td><td>150</td></tr><tr><td>ArfaBubble</td><td>-3</td><td>90</td></tr><tr><td>Keep_of_Kalessin</td><td>-1</td><td>80</td></tr><tr><td>alegiuvadoita</td><td>+1</td><td>70</td></tr><tr><td>infamousEddieC</td><td>+7</td><td>60</td></tr><tr><td>Hoplinkz</td><td>+8</td><td>50</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>X3offtheTee</td><td>-5</td><td>125</td></tr><tr><td>er114ic</td><td>-1</td><td>90</td></tr><tr><td>RSHxElites</td><td>+4</td><td>80</td></tr><tr><td>Noworries37908</td><td>+4</td><td>80</td></tr><tr><td>PillowPutter</td><td>+4</td><td>105</td></tr><tr><th colspan=\"3\">Division 4</th></tr><tr><td>horusphoenix</td><td>-14</td><td>125</td></tr><tr><td>M.Bel_Trame</td><td>-9</td><td>115</td></tr><tr><td>Matwilney</td><td>+2</td><td>80</td></tr></table></div><div class=\"history-item\"><strong>S8 W5: The Silver Strand (10 Sep - 16 Sep 2026)</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>fransslabak</td><td>-13</td><td>100</td></tr><tr><td>Geordieboy85</td><td>-13</td><td>100</td></tr><tr><td>WingIsBack</td><td>-11</td><td>80</td></tr><tr><td>Mr Longpole</td><td>-9</td><td>120</td></tr><tr><td>lanzarlaluna</td><td>-5</td><td>110</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>Keep_of_Kalessin</td><td>-7</td><td>100</td></tr><tr><td>ArfaBubble</td><td>-5</td><td>90</td></tr><tr><td>guillaume_moreau</td><td>E</td><td>130</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>PillowPutter</td><td>-10</td><td>100</td></tr><tr><td>X3offtheTee</td><td>-3</td><td>90</td></tr><tr><td>er114ic</td><td>E</td><td>130</td></tr><tr><td>RSHxElites</td><td>+8</td><td>120</td></tr><tr><td>Noworries37908</td><td>+11</td><td>60</td></tr><tr><th colspan=\"3\">Division 4</th></tr><tr><td>Colly45x</td><td>-12</td><td>150</td></tr><tr><td>Hendomedes</td><td>-11</td><td>90</td></tr><tr><td>horusphoenix</td><td>-7</td><td>80</td></tr><tr><td>XxTML67xX</td><td>-7</td><td>80</td></tr><tr><td>Polekatt</td><td>+5</td><td>60</td></tr><tr><td>Matwilney</td><td>+7</td><td>50</td></tr><tr><td>kcarlin069</td><td>+12</td><td>40</td></tr></table></div><div class=\"history-item\"><strong>S8 W4: Ballyhoo Golf Club (3 Sep - 9 Sep 2026)</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>Geordieboy85</td><td>-18</td><td>100</td></tr><tr><td>fransslabak</td><td>-9</td><td>90</td></tr><tr><td>Mr Longpole</td><td>-5</td><td>105</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>ArfaBubble</td><td>-12</td><td>125</td></tr><tr><td>Keep_of_Kalessin</td><td>-6</td><td>90</td></tr><tr><td>guillaume_moreau</td><td>+1</td><td>80</td></tr><tr><td>Hoplinkz</td><td>+4</td><td>95</td></tr><tr><td>alegiuvadoita</td><td>+8</td><td>60</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>Noworries37908</td><td>+5</td><td>100</td></tr><tr><td>RSHxElites</td><td>+6</td><td>90</td></tr><tr><td>PillowPutter</td><td>+6</td><td>90</td></tr><tr><td>X3offtheTee</td><td>+8</td><td>95</td></tr><tr><td>er114ic</td><td>+8</td><td>95</td></tr><tr><th colspan=\"3\">Division 4</th></tr><tr><td>XxTML67xX</td><td>-15</td><td>100</td></tr><tr><td>Hendomedes</td><td>-14</td><td>90</td></tr><tr><td>Colly45x</td><td>-14</td><td>90</td></tr><tr><td>NightTrainD</td><td>-5</td><td>70</td></tr><tr><td>Matwilney</td><td>+8</td><td>110</td></tr><tr><td>Polekatt</td><td>+13</td><td>50</td></tr><tr><td>kcarlin069</td><td>+28</td><td>40</td></tr></table></div><div class=\"history-item\"><strong>S8 W3: Black Rye Ridge MC (27 Aug - 2 Sep 2026)</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>WingIsBack</td><td>-13</td><td>125</td></tr><tr><td>GbWaCkErGuY</td><td>-13</td><td>100</td></tr><tr><td>Geordieboy85</td><td>-10</td><td>80</td></tr><tr><td>lanzarlaluna</td><td>-9</td><td>95</td></tr><tr><td>fransslabak</td><td>-8</td><td>60</td></tr><tr><td>Mr Longpole</td><td>-5</td><td>50</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>Keep_of_Kalessin</td><td>-15</td><td>125</td></tr><tr><td>Hoplinkz</td><td>E</td><td>115</td></tr><tr><td>alegiuvadoita</td><td>+5</td><td>80</td></tr><tr><td>infamousEddieC</td><td>+6</td><td>70</td></tr><tr><td>guillaume_moreau</td><td>+6</td><td>70</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>X3offtheTee</td><td>E</td><td>100</td></tr><tr><td>PillowPutter</td><td>+3</td><td>115</td></tr><tr><td>er114ic</td><td>+4</td><td>80</td></tr><tr><td>RSHxElites</td><td>+5</td><td>95</td></tr><tr><td>Noworries37908</td><td>+5</td><td>70</td></tr><tr><th colspan=\"3\">Division 4</th></tr><tr><td>horusphoenix</td><td>-16</td><td>100</td></tr><tr><td>XxTML67xX</td><td>-15</td><td>115</td></tr><tr><td>NightTrainD</td><td>-12</td><td>105</td></tr><tr><td>Polekatt</td><td>+13</td><td>70</td></tr><tr><td>kcarlin069</td><td>+19</td><td>60</td></tr></table></div><div class=\"history-item\"><strong>S8 W2: Shio Tori (20 Aug - 26 Aug 2026)</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>fransslabak</td><td>-29</td><td>125</td></tr><tr><td>WingIsBack</td><td>-20</td><td>90</td></tr><tr><td>Geordieboy85</td><td>-13</td><td>105</td></tr><tr><td>Mr Longpole</td><td>-8</td><td>70</td></tr><tr><td>GbWaCkErGuY</td><td>+104</td><td>60</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>Keep_of_Kalessin</td><td>-20</td><td>125</td></tr><tr><td>infamousEddieC</td><td>-11</td><td>115</td></tr><tr><td>Hoplinkz</td><td>-8</td><td>80</td></tr><tr><td>guillaume_moreau</td><td>-7</td><td>70</td></tr><tr><td>alegiuvadoita</td><td>-5</td><td>60</td></tr><tr><td>ArfaBubble</td><td>-2</td><td>50</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>X3offtheTee</td><td>-7</td><td>125</td></tr><tr><td>er114ic</td><td>-5</td><td>90</td></tr><tr><td>PillowPutter</td><td>-4</td><td>105</td></tr><tr><td>RSHxElites</td><td>-3</td><td>70</td></tr><tr><td>Noworries37908</td><td>+5</td><td>60</td></tr><tr><th colspan=\"3\">Division 4</th></tr><tr><td>horusphoenix</td><td>-17</td><td>100</td></tr><tr><td>NightTrainD</td><td>-9</td><td>90</td></tr><tr><td>XxTML67xX</td><td>-8</td><td>80</td></tr><tr><td>Polekatt</td><td>-3</td><td>120</td></tr><tr><td>kcarlin069</td><td>+16</td><td>60</td></tr></table></div><div class=\"history-item\"><strong>S8 W1: Baskerville Moors (13 Aug - 19 Aug 2026)</strong><table><tr><th colspan=\"3\">Division 1</th></tr><tr><td>WingIsBack</td><td>-13</td><td>125</td></tr><tr><td>fransslabak</td><td>-11</td><td>90</td></tr><tr><td>Geordieboy85</td><td>-7</td><td>105</td></tr><tr><td>Mr Longpole</td><td>-4</td><td>70</td></tr><tr><th colspan=\"3\">Division 2</th></tr><tr><td>infamousEddieC</td><td>-13</td><td>100</td></tr><tr><td>Keep_of_Kalessin</td><td>-12</td><td>90</td></tr><tr><td>ArfaBubble</td><td>-10</td><td>80</td></tr><tr><td>Hoplinkz</td><td>-6</td><td>120</td></tr><tr><td>alegiuvadoita</td><td>-5</td><td>60</td></tr><tr><td>guillaume_moreau</td><td>-4</td><td>50</td></tr><tr><th colspan=\"3\">Division 3</th></tr><tr><td>RSHxElites</td><td>-7</td><td>125</td></tr><tr><td>X3offtheTee</td><td>+2</td><td>90</td></tr><tr><td>Noworries37908</td><td>+8</td><td>80</td></tr><tr><td>PillowPutter</td><td>+14</td><td>95</td></tr><tr><td>er114ic</td><td>+15</td><td>60</td></tr><tr><td>MADROK87</td><td>+44</td><td>50</td></tr><tr><th colspan=\"3\">Division 4</th></tr><tr><td>Wo Be Killin</td><td>-23</td><td>100</td></tr><tr><td>horusphoenix</td><td>-15</td><td>90</td></tr><tr><td>leowalkerr8</td><td>-10</td><td>80</td></tr><tr><td>XxTML67xX</td><td>-8</td><td>145</td></tr><tr><td>FLEWFLANDER</td><td>+11</td><td>60</td></tr><tr><td>Polekatt</td><td>+23</td><td>75</td></tr><tr><td>kcarlin069</td><td>+37</td><td>40</td></tr></table></div>",
+  "lastFinalizedWeek": 12,
   "maxDivisions": 4,
   "weeklyWinners": {
-    "1": "Geordieboy85",
-    "2": "ArfaBubble",
-    "3": "Colly45x",
-    "4": "horusphoenix"
+    "1": "Mr Longpole",
+    "2": "Keep_of_Kalessin",
+    "3": "Colly45x"
   },
   "promotionsProcessedForWeek": 0,
   "weekInProgress": false
